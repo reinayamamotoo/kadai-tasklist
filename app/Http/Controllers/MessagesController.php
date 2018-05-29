@@ -1,84 +1,47 @@
-<?php
-
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
+namespace App\Controllers;
 class MessagesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+   
+    // "List display process" when `messages/` is accessed by GET
+    public function index ()
     {
-        //
+        ~
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    // "New registration screen display processing" when `messages/create` is accessed with GET
+    public function create ()
     {
-        //
+        ~
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    // "New registration processing" when `messages/` is accessed by POST
+    public function store ()
     {
-        //
+        ~
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    // "Acquisition display process" when accessing `messages/id` with GET
+    public function show ($ id)
     {
-        //
+        ~
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+
+    // "Update screen display processing" when accessing `messages/id/edit` with GET
+    public function edit ($ id)
     {
-        //
+        ~
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    // "Update process" when `messages/id` are accessed by PUT or PATCH
+    public function update ($ id)
     {
-        //
+        ~
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    // "Delete processing" when `messages/id` is accessed by DELETE
+    public function destroy ($ id)
     {
-        //
+        ~
     }
 }
