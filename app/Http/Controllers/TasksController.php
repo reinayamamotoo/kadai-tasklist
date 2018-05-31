@@ -45,13 +45,20 @@ class TasksController extends Controller
      */
      public function store(Request $request)
     {
-        $task = new Task;
-        $task->content = $request->content;
-        $task->save();
+        $this->validate($request, [
+            'title' => 'required|max:191',   // add
+            'content' => 'required|max:191',
+        ]);
+
+
+        $message = new Task;
+        $message->title = $request->title;    // add
+        $message->content = $request->content;
+        $message->save();
+
 
         return redirect('/');
     }
-
     /**
      * Display the specified resource.
      *
@@ -91,9 +98,17 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $task = Task::find($id);
-        $task->content = $request->content;
-        $task->save();
+        $this->validate($request, [
+            'title' => 'required|max:191',   // add
+            'content' => 'required|max:191',
+        ]);
+
+
+        $message = Task::find($id);
+        $message->title = $request->title;    // add
+        $message->content = $request->content;
+        $message->save();
+
 
         return redirect('/');
     }
