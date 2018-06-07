@@ -2,7 +2,7 @@
 
 @section('content')
     @if (Auth::check())
-        <?php $user = Auth::user(); ?>
+        <?php  $user = Auth::user(); ?>
         {{ $user->name }}
     @else
         <div class="center jumbotron">
