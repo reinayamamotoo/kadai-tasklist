@@ -23,7 +23,7 @@
     
     Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
-    Route::resource('microposts', 'TasklistsController', ['only' => ['store', 'destroy']]);
+    Route::resource('tasklists', 'TasklistsController', ['only' => ['store', 'destroy', 'create', 'edit', 'update', 'show']]);
 });
     
     

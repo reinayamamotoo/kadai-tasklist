@@ -12,7 +12,7 @@ class UsersController extends Controller
     {
         $users = User::paginate(10);
         
-        return view('users.index', [
+        return view('tasks.index', [
             'users' => $users,
         ]);
     }
@@ -21,15 +21,15 @@ class UsersController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        $microposts = $user->microposts()->orderBy('created_at', 'desc')->paginate(10);
+        $tasklists = $user->tasklists()->orderBy('created_at', 'desc')->paginate(10);
 
         $data = [
             'user' => $user,
-            'microposts' => $microposts,
+            'tasklists' => $tasklists,
         ];
 
         $data += $this->counts($user);
 
-        return view('users.show', $data);
+        return view('users.index', $data);
     }
 }
