@@ -2,6 +2,8 @@
 
 @section('content')
 
+   
+
     <h1>id: {{ $tasklist->id }} のタスク編集ページ</h1>
 
               

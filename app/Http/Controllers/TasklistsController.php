@@ -34,22 +34,41 @@ class TasklistsController extends Controller
     }
     
     public function show($id)
-    {
- 
-        return view('tasklists.show', [
-            'tasklist' => Tasklist::find($id)
-        ]);
-
-
+{
+    $tasklist = Tasklist::find($id);
+        if  ($tasklist == null) {
+         
+            return redirect('/');
+        }
+         
+        else if (\Auth::user()->id === $tasklist->user_id) {
+                return view('tasklists.show', ['tasklist' => $tasklist]);
+        }
+         
+        else{
+           return redirect('/');
+         }
     }
     
     public function edit($id)
     {
-        $tasklist = Tasklist::find($id);
-
-        return view('tasklists.edit', [
-            'tasklist' => $tasklist,
-        ]);
+     $tasklist = Tasklist::find($id);
+         
+        if  ($tasklist == null) {
+         
+            return redirect('/');
+        }
+         
+        else if (\Auth::user()->id === $tasklist->user_id) {
+                return view('tasklists.edit', ['tasklist' => $tasklist]);
+        }
+         
+        else{
+           return redirect('/');
+         }
+         
+         
+         
     }
     
     public function create()
